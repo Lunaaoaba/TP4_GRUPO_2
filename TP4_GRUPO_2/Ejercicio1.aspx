@@ -4,6 +4,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <style>
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            font-family: Arial, sans-serif;
+        }
+    </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
@@ -15,12 +24,12 @@
                     <td style="padding-left: 90px"><u>DESTINO INICIAL</u></td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><br /></td>
                 </tr>
                 <tr>
                     <td style="padding-left: 90px"><b>PROVINCIA:</b></td>
                     <td> 
-                        <asp:DropDownList ID="ddlProvincia" runat="server">
+                        <asp:DropDownList ID="ddlProvincia" runat="server" AutoPostBack="True">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -32,17 +41,17 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><br /></td>
                 </tr>
                 <tr>
                     <td style="padding-left: 90px"><u>DESTINO FINAL</u></td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><br /></td>
                 </tr>
                 <tr>
                     <td style="padding-left: 90px"><b>PROVINCIA:</b></td> <td>
-                    <asp:DropDownList ID="ddlProvinciaDestino" runat="server">
+                    <asp:DropDownList ID="ddlProvinciaDestino" runat="server" AutoPostBack="True">
                     </asp:DropDownList>
                     </td>
                 </tr>
