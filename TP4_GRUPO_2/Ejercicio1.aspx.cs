@@ -17,18 +17,47 @@ namespace TP4_GRUPO_2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlConnection conexionbasededatos = new SqlConnection(conexion); 
-            conexionbasededatos.Open();
+            if (!IsPostBack)
+            {
+                SqlConnection conexionbasededatos = new SqlConnection(conexion);
+                conexionbasededatos.Open();
 
-            SqlCommand comandobasededatos = new SqlCommand(consultaprovincias, conexionbasededatos);
-            SqlDataReader lectorbasededatos = comandobasededatos.ExecuteReader(); 
+                SqlCommand comandobasededatos = new SqlCommand(consultaprovincias, conexionbasededatos);
+                SqlDataReader lectorbasededatos = comandobasededatos.ExecuteReader();
 
-            ddlProvincia.DataSource = lectorbasededatos;
-            ddlProvincia.DataTextField = "NombreProvincia";
-            ddlProvincia.DataValueField = "IdProvincia";
-            ddlProvincia.DataBind();
+                ddlProvincia.DataSource = lectorbasededatos;
+                ddlProvincia.DataTextField = "NombreProvincia";
+                ddlProvincia.DataValueField = "IdProvincia";
+                ddlProvincia.DataBind();
 
-            conexionbasededatos.Close();
+                lectorbasededatos.Close();
+
+                SqlConnection conexionLocalidad = new SqlConnection(conexion);
+                conexionLocalidad.Open();
+
+                SqlCommand comandoLocalidad = new SqlCommand(consultalocalidades, conexionLocalidad);
+                SqlDataReader lectorLocalidad = comandoLocalidad.ExecuteReader();
+
+                ddlLocalidad.DataSource = lectorLocalidad;
+                ddlLocalidad.DataTextField = "NombreLocalidad";
+                ddlLocalidad.DataValueField = "IdLocalidad";
+                ddlLocalidad.DataBind();
+
+                lectorLocalidad.Close();
+
+                SqlConnection conexionProvDestino = new SqlConnection(conexion);
+                conexionProvDestino.Open();
+
+                SqlCommand comandoProvDestino = new SqlCommand(consultaprovincias, conexionProvDestino);
+                SqlDataReader lectorProvDestino = comandoProvDestino.ExecuteReader();
+
+                ddlProvinciaDestino.DataSource = lectorProvDestino;
+                ddlProvinciaDestino.DataTextField = "NombreProvincia";
+                ddlProvinciaDestino.DataValueField = "IdProvincia";
+                ddlProvinciaDestino.DataBind();
+
+                lectorProvDestino.Close();
+            }
         }
     }
 }

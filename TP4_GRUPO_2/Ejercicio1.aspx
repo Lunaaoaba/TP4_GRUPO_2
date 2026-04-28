@@ -36,7 +36,7 @@
                 <tr>
                     <td style="padding-left: 90px"><b>LOCALIDAD:</b></td>
                     <td> 
-                        <asp:DropDownList ID="ddpLocalidad" runat="server">
+                        <asp:DropDownList ID="ddlLocalidad" runat="server">
                         </asp:DropDownList>
                     </td>
                 </tr>
