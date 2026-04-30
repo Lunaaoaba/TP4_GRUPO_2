@@ -78,13 +78,13 @@
                 </tr>
                 <tr>
                     <td><b>PROVINCIA:</b></td> <td>
-                    <asp:DropDownList ID="ddlProvinciaDestino" runat="server" AutoPostBack="True" Width="100px">
+                    <asp:DropDownList ID="ddlProvinciaDestino" runat="server" AutoPostBack="True" Width="180px" OnSelectedIndexChanged="ddlProvinciaDestino_SelectedIndexChanged">
                     </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
                     <td><b>LOCALIDAD:</b></td> <td>
-                    <asp:DropDownList ID="ddlLocalidadDestino" runat="server" Width="100px">
+                    <asp:DropDownList ID="ddlLocalidadDestino" runat="server" Width="180px">
                     </asp:DropDownList>
                     </td>
                 </tr>
