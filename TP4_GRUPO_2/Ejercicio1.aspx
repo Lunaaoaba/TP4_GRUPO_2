@@ -5,6 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <style>
+        table 
+        {
+        maegin: auto;
+        border: 2px solid black;
+        background-color : #f9f9f9;
+        padding: 10 px;
+        }
         form {
             display: flex;
             justify-content: center;
