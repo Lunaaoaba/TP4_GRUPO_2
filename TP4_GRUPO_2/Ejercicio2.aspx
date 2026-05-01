@@ -19,6 +19,14 @@
                         <asp:TextBox ID="txtIdProducto" runat="server" Width="250px"></asp:TextBox>
                     </td>
                 </tr>
+                <tr>
+                    <td>IdCategoria:</td><td>
+                    <asp:DropDownList ID="ddlCategoria" runat="server" Width="120px">
+                    </asp:DropDownList>
+                    </td> <td>
+                        <asp:TextBox ID="txtCategoria" runat="server" Width="250px"></asp:TextBox>
+                    </td>
+                </tr>
             </table>
         </div>
     </form>
