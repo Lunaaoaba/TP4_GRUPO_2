@@ -12,7 +12,7 @@ namespace TP4_GRUPO_2
     public partial class Ejercicio2 : System.Web.UI.Page
     {
         private const string conexionNeptuno = @"Data Source=localhost\sqlexpress;Initial Catalog=Neptuno;Integrated Security=True;Encrypt=False";
-        private string consultaBdd = "SELECT * FROM Productos";
+        private string consultaBdd = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -31,7 +31,8 @@ namespace TP4_GRUPO_2
                 SqlCommand comando = new SqlCommand(consultaBdd, conexion);
                 SqlDataReader lector = comando.ExecuteReader();
 
-
+                gvProductos.DataSource = lector;
+                gvProductos.DataBind();
 
                 conexion.Close();
             }

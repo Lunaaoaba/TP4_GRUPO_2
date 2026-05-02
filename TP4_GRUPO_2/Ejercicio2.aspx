@@ -8,6 +8,9 @@
         form {
             font-family: Arial, sans-serif;
         }
+        div {
+            padding: 0 0 0 20px;
+        }
     </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
@@ -25,10 +28,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>IdCategoria:</td><td>
+                    <td style="padding-bottom: 30px;">IdCategoria:</td><td style="padding-bottom: 30px;">
                     <asp:DropDownList ID="ddlCategoria" runat="server" Width="100px">
                     </asp:DropDownList>
-                    </td> <td>
+                    </td> <td style="padding-bottom: 30px;">
                         <asp:TextBox ID="txtCategoria" runat="server" Width="100px"></asp:TextBox>
                     </td>
                 </tr>
