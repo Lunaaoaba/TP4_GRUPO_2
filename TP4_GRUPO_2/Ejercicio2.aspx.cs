@@ -46,27 +46,65 @@ namespace TP4_GRUPO_2
 
         protected void btnFiltro_Click(object sender, EventArgs e)
         {
-            if(txtIdProducto.Text != string.Empty)
+            
+            if (!string.IsNullOrEmpty(txtIdProducto.Text) && string.IsNullOrEmpty(txtCategoria.Text))
             {
                 consultaBdd = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos WHERE IdProducto" + ddlProducto.SelectedValue + txtIdProducto.Text;
-            }
 
-            if (txtCategoria.Text != string.Empty)
+            }
+            else if (string.IsNullOrEmpty(txtIdProducto.Text) && !string.IsNullOrEmpty(txtCategoria.Text))
             {
                 consultaBdd = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos WHERE IdCategoría" + ddlCategoria.SelectedValue + txtCategoria.Text;
             }
+            else if (!string.IsNullOrEmpty(txtIdProducto.Text) && !string.IsNullOrEmpty(txtCategoria.Text))
+            {
+                consultaBdd = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos WHERE IdProducto" + ddlProducto.SelectedValue + txtIdProducto.Text + " AND IdCategoría" + ddlCategoria.SelectedValue + txtCategoria.Text;
+            } 
 
             SqlConnection conexion = new SqlConnection(conexionNeptuno);
             conexion.Open();
 
             SqlCommand comando = new SqlCommand(consultaBdd, conexion);
             SqlDataReader lector = comando.ExecuteReader();
+
             gvProductos.DataSource = lector;
             gvProductos.DataBind();
 
-
-
             conexion.Close();
+
+            txtIdProducto.Text = string.Empty;
+            txtCategoria.Text = string.Empty;
+            ddlProducto.SelectedIndex = 0;
+            ddlCategoria.SelectedIndex = 0;
+        }
+
+        protected void btQuitarFiltro_Click(object sender, EventArgs e)
+        {
+            CargarTablaProductos();
+        }
+
+        protected void cverrores_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (!string.IsNullOrEmpty(txtIdProducto.Text) && string.IsNullOrEmpty(txtCategoria.Text))
+            {
+                args.IsValid = true;
+                lberrorfiltro.Visible = false;
+            }
+            else if(string.IsNullOrEmpty(txtIdProducto.Text) && !string.IsNullOrEmpty(txtCategoria.Text))
+            {
+                args.IsValid = true;
+                lberrorfiltro.Visible = false;
+            }
+            else if (!string.IsNullOrEmpty(txtIdProducto.Text) && !string.IsNullOrEmpty(txtCategoria.Text))
+            {
+                args.IsValid = true;
+                lberrorfiltro.Visible = false;
+            }
+            else
+            {
+                args.IsValid = false;
+                lberrorfiltro.Text = "Debe ingresar al menos un filtro para aplicar la búsqueda.";
+            }
         }
     }
 }

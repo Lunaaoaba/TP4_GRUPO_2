@@ -51,6 +51,15 @@ namespace TP4_GRUPO_2
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revIdProd;
 
         /// <summary>
+        /// Control cverrores.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cverrores;
+
+        /// <summary>
         /// Control ddlCategoria.
         /// </summary>
         /// <remarks>
@@ -69,6 +78,15 @@ namespace TP4_GRUPO_2
         protected global::System.Web.UI.WebControls.TextBox txtCategoria;
 
         /// <summary>
+        /// Control revCategorias.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revCategorias;
+
+        /// <summary>
         /// Control btnFiltro.
         /// </summary>
         /// <remarks>
@@ -78,6 +96,24 @@ namespace TP4_GRUPO_2
         protected global::System.Web.UI.WebControls.Button btnFiltro;
 
         /// <summary>
+        /// Control btQuitarFiltro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btQuitarFiltro;
+
+        /// <summary>
+        /// Control lberrorfiltro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lberrorfiltro;
+
+        /// <summary>
         /// Control gvProductos.
         /// </summary>
         /// <remarks>
@@ -85,5 +121,14 @@ namespace TP4_GRUPO_2
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvProductos;
+
+        /// <summary>
+        /// Control VSerrores.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary VSerrores;
     }
 }
