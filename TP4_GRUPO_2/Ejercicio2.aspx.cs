@@ -13,6 +13,21 @@ namespace TP4_GRUPO_2
     {
         private const string conexionNeptuno = @"Data Source=localhost\sqlexpress;Initial Catalog=Neptuno;Integrated Security=True;Encrypt=False";
         private string consultaBdd = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos";
+
+
+        private void CargarTablaProductos()
+        {
+            SqlConnection conexion = new SqlConnection(conexionNeptuno);
+            conexion.Open();
+
+            SqlCommand comando = new SqlCommand(consultaBdd, conexion);
+            SqlDataReader lector = comando.ExecuteReader();
+
+            gvProductos.DataSource = lector;
+            gvProductos.DataBind();
+
+            conexion.Close();
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -25,17 +40,33 @@ namespace TP4_GRUPO_2
                 ddlCategoria.Items.Add(new ListItem("Mayor a: ", ">"));
                 ddlCategoria.Items.Add(new ListItem("Menor a: ", "<"));
 
-                SqlConnection conexion = new SqlConnection(conexionNeptuno);
-                conexion.Open();
-
-                SqlCommand comando = new SqlCommand(consultaBdd, conexion);
-                SqlDataReader lector = comando.ExecuteReader();
-
-                gvProductos.DataSource = lector;
-                gvProductos.DataBind();
-
-                conexion.Close();
+                CargarTablaProductos();
             }
+        }
+
+        protected void btnFiltro_Click(object sender, EventArgs e)
+        {
+            if(txtIdProducto.Text != string.Empty)
+            {
+                consultaBdd = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos WHERE IdProducto" + ddlProducto.SelectedValue + txtIdProducto.Text;
+            }
+
+            if (txtCategoria.Text != string.Empty)
+            {
+                consultaBdd = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos WHERE IdCategoría" + ddlCategoria.SelectedValue + txtCategoria.Text;
+            }
+
+            SqlConnection conexion = new SqlConnection(conexionNeptuno);
+            conexion.Open();
+
+            SqlCommand comando = new SqlCommand(consultaBdd, conexion);
+            SqlDataReader lector = comando.ExecuteReader();
+            gvProductos.DataSource = lector;
+            gvProductos.DataBind();
+
+
+
+            conexion.Close();
         }
     }
 }
