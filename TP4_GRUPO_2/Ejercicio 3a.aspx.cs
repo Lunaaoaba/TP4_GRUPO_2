@@ -40,5 +40,10 @@ namespace TP4_GRUPO_2
         {
             Server.Transfer("Ejercicio 3b.aspx");
         }
+
+        protected void lbtnTodosLibros_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Ejercicio_3c.aspx");
+        }
     }
 }

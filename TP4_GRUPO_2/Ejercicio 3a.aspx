@@ -58,6 +58,11 @@
 
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <asp:LinkButton ID="lbtnTodosLibros" runat="server" OnClick="lbtnTodosLibros_Click">Ver todos los libros</asp:LinkButton>
+                    </td>
+                </tr>
             </table>
         </div>
     </form>

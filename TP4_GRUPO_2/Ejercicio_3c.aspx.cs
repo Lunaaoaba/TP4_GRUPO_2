@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.SqlClient;
 using System.Web.DynamicData;
 
 namespace TP4_GRUPO_2
 {
-    public partial class Ejercicio_3b : System.Web.UI.Page
+    public partial class Ejercicio_3c : System.Web.UI.Page
     {
         private const string conexionBBD = @"Data Source=localhost\sqlexpress;Initial Catalog=Libreria;Integrated Security=True";
         private string consultaSQL = "SELECT * FROM Libros";
@@ -22,28 +22,20 @@ namespace TP4_GRUPO_2
             SqlCommand comandogv = new SqlCommand(consultaSQL, conexiongv);
             SqlDataReader lecturagv = comandogv.ExecuteReader();
 
-            gvLibros.DataSource = lecturagv;
-            gvLibros.DataBind();
+            gvTodosLibros.DataSource = lecturagv;
+            gvTodosLibros.DataBind();
 
-            conexiongv.Close(); 
+            conexiongv.Close();
         }
-
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-               string temaseleccionado = ((DropDownList)PreviousPage.FindControl("ddlTemas")).SelectedValue; 
-
-               if(temaseleccionado != null)
-               {
-                  consultaSQL = "SELECT * FROM Libros WHERE IdTema = " + temaseleccionado;
-               }
-                   CargarGv();
+                CargarGv();
             }
         }
 
-        protected void LNBConsultar_Click(object sender, EventArgs e)
+        protected void LNBVolver_Click(object sender, EventArgs e)
         {
             Server.Transfer("Ejercicio 3a.aspx");
         }
