@@ -6,34 +6,38 @@
 <head runat="server">
     <style>
         body {
-        background-image: url('img/bckg2.gif');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        cursor: url('img/cursor.png'), auto;
-    }
-    form {
-        font-family: Arial, sans-serif;
-    }
-    .container {
-        padding: 20px;
-        background-color: #ffffff;
-        width:400px;
-        border-radius: 10px;
-        margin: 80px auto;
-    }
-    .gridview {
-        background-color: #ffffff;
-        border: 1px solid #ccc;
-    }
-    .gridview tr {
-        background-color: #ffffff;
-    }
-    .gridview tr:hover {
-        background-color: #f0f0f0;
-    }
-    </style>
+            background-image: url('img/bckg2.gif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            cursor: url('img/cursor.png'), auto;
+        }
 
+        form {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 20px;
+            background-color: #ffffff;
+            width: 400px;
+            border-radius: 10px;
+            margin: 80px auto;
+        }
+
+        .gridview {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+        }
+
+            .gridview tr {
+                background-color: #ffffff;
+            }
+
+                .gridview tr:hover {
+                    background-color: #f0f0f0;
+                }
+    </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>

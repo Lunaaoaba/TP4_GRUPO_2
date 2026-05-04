@@ -14,6 +14,20 @@ namespace TP4_GRUPO_2
         private const string conexionBBD = @"Data Source=localhost\sqlexpress;Initial Catalog=Libreria;Integrated Security=True";
         private string consultaSQL = "SELECT * FROM Temas";
 
+        private void CargarGv()
+        {
+            SqlConnection conexiongv = new SqlConnection(conexionBBD);
+            conexiongv.Open();
+
+            SqlCommand comandogv = new SqlCommand(consultaSQL, conexiongv);
+            SqlDataReader lecturagv = comandogv.ExecuteReader();
+
+            gvLibros.DataSource = lecturagv;
+            gvLibros.DataBind();
+
+            conexiongv.Close(); 
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
