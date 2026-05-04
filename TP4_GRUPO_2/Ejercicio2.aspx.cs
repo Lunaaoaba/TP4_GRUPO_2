@@ -17,6 +17,7 @@ namespace TP4_GRUPO_2
 
         private void CargarTablaProductos()
         {
+            
             SqlConnection conexion = new SqlConnection(conexionNeptuno);
             conexion.Open();
 
