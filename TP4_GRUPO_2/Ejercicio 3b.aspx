@@ -6,7 +6,7 @@
 <head runat="server">
      <style>
          body {
-             background-image: url('img/bckg2.gif');
+             background-image: url('img/libreria.jpg');
              background-size: cover;
              background-position: center;
              background-attachment: fixed;
@@ -56,6 +56,14 @@
                 <tr>
                     <td>
                         <asp:GridView ID="gvLibros" runat="server" CssClass="gridview"></asp:GridView>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:LinkButton ID="LNBConsultar" runat="server" OnClick="LNBConsultar_Click">Consular otro tema</asp:LinkButton>
                     </td>
                 </tr>
             </table>

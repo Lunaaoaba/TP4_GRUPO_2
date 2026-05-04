@@ -6,7 +6,7 @@
 <head runat="server">
     <style>
         body {
-            background-image: url('img/bckg2.gif');
+            background-image: url('img/FondoEJ3.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
