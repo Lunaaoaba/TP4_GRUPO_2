@@ -75,6 +75,7 @@
     <Content Include="Ejercicio_3c.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoDatos.cs" />
     <Compile Include="Ejercicio 3a.aspx.cs">
       <DependentUpon>Ejercicio 3a.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

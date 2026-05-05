@@ -11,27 +11,14 @@ namespace TP4_GRUPO_2
 {
     public partial class Ejercicio_3c : System.Web.UI.Page
     {
-        private const string conexionBBD = @"Data Source=localhost\sqlexpress;Initial Catalog=Libreria;Integrated Security=True";
+        
         private string consultaSQL = "SELECT * FROM Libros";
 
-        private void CargarGv()
-        {
-            SqlConnection conexiongv = new SqlConnection(conexionBBD);
-            conexiongv.Open();
-
-            SqlCommand comandogv = new SqlCommand(consultaSQL, conexiongv);
-            SqlDataReader lecturagv = comandogv.ExecuteReader();
-
-            gvTodosLibros.DataSource = lecturagv;
-            gvTodosLibros.DataBind();
-
-            conexiongv.Close();
-        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                CargarGv();
+                AccesoDatos.CargarGv(gvTodosLibros, consultaSQL);
             }
         }
 
