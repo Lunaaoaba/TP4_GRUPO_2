@@ -14,6 +14,7 @@ namespace TP4_GRUPO_2
         private const string conexion = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security=True;Encrypt=False";
         private string consultaprovincias = "SELECT * FROM Provincias";
         private string consultalocalidades = "SELECT * FROM Localidades";
+
         private void cargarProvinciaInicio()
         {
             string valor = ddlProvincia.SelectedValue.ToString();
@@ -57,6 +58,8 @@ namespace TP4_GRUPO_2
                     ddlLocalidad.Items.Add(new ListItem(lectorLocalidad["NombreLocalidad"].ToString()));
                 }
             }
+
+
             conexionLocalidad.Close();
         }
 
@@ -114,8 +117,11 @@ namespace TP4_GRUPO_2
             if (!IsPostBack)
             {   
                 cargarProvinciaInicio();
+
                 cargarProvinciaDestino();
+
                 cargarLocalidadInicio();
+
                 cargarLocalidadDestino();
             }
         }
