@@ -39,7 +39,7 @@ namespace TP4_GRUPO_2
                {
                   consultaSQL = "SELECT * FROM Libros WHERE IdTema = " + temaseleccionado;
                }
-                   CargarGv();
+               CargarGv();
             }
         }
 
